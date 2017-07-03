@@ -1,28 +1,43 @@
 import React from 'react';
-import {StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 
 export default class LoginForm extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar
+          barStyle="light-content"
+        />
         <TextInput
           placeholder="email"
+          returnKeyType="next"
           style={styles.input}
+          onSubmitEditing={() => this.passwordInput.focus()}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoCorrect={false}
         />
         <TextInput
           placeholder="password"
+          returnKeyType="next"
+          secureTextEntry
           style={styles.input}
+          ref={(input) => this.passwordInput = input}
+          onSubmitEditing={() => this.confirmPassInput.focus()}
         />
         <TextInput
           placeholder="confirm password"
+          returnKeyType="go"
+          secureTextEntry
           style={styles.input}
+          ref={(input) => this.confirmPassInput = input}
         />
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.buttonText}>SIGN UP</Text>
         </TouchableOpacity>
 
         <Text style={styles.line}>------or-------</Text>
-        
+
         <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.buttonText}>SIGN UP W/ FACEBOOK</Text>
         </TouchableOpacity>
@@ -39,8 +54,8 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     width: 250,
-    backgroundColor: '#ecf0f1',
-    marginBottom: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    marginBottom: 10,
     color: '#FFF',
     paddingHorizontal: 10
   },
@@ -50,6 +65,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    fontWeight: '700'
   }
 });
