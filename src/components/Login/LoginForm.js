@@ -1,17 +1,8 @@
 import React from 'react';
 import {StyleSheet, Text, View, TextInput, TouchableOpacity, StatusBar} from 'react-native';
 import {NavigationActions} from 'react-navigation';
-import MainTabs from '../../../App'
 
 export default class LoginForm extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  _navigate(routeName){
-    this.props.navigation({
-      name: routeName
-    });
-  }
   render() {
     return (
       <View style={styles.container}>
@@ -48,7 +39,7 @@ export default class LoginForm extends React.Component {
 
         <Text style={styles.line}>------or-------</Text>
 
-        <TouchableOpacity onPress={this._navigate.bind(this, 'Main')} style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.buttonContainer}>
           <Text style={styles.buttonText}>SIGN UP W/ FACEBOOK</Text>
         </TouchableOpacity>
       </View>

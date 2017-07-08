@@ -14,7 +14,7 @@ const MainTabs = TabNavigator({
   Profile: {screen: ProfileScreen}
 });
 
-export const RootNavigator = StackNavigator({
+const RootNavigator = StackNavigator({
   Main:  {
     screen: MainTabs,
   },
@@ -34,3 +34,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+export default RootNavigator;
