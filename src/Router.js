@@ -8,29 +8,41 @@ import SearchScreen from './components/MainTabs/Search/SearchScreen';
 import CartScreen from './components/MainTabs/Cart/CartScreen';
 import ProfileScreen from './components/MainTabs/Profile/ProfileScreen';
 
+
 const MainTabs = TabNavigator({
   Explore: {
-    screen: ExploreScreen,
+    screen: StackNavigator({
+      Explore: {screen: ExploreScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="compass" size={30} />
+      tabBarIcon: <Icon name="compass" size={30} />,
+      title: 'Explore'
     }
   },
   Search: {
-    screen: SearchScreen,
+    screen: StackNavigator({
+      Search: {screen: SearchScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="search" size={30} />
+      tabBarIcon: <Icon name="search" size={30} />,
     }
   },
   Cart: {
-    screen: CartScreen,
+    screen: StackNavigator({
+      Cart: {screen: CartScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="shopping-cart" size={30} />
+      tabBarIcon: <Icon name="shopping-cart" size={30} />,
+      title: 'Cart'
     }
   },
   Profile: {
-    screen: ProfileScreen,
+    screen: StackNavigator({
+      Profile: {screen: ProfileScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="user" size={30} />
+      tabBarIcon: <Icon name="user" size={30} />,
+      title: 'Profile'
     }
   }
 });
