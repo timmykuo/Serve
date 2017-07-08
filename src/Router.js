@@ -1,6 +1,7 @@
 import React from 'react';
 import {StyleSheet, Text, View } from 'react-native';
 import {StackNavigator, TabNavigator, NavigationActions} from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import Login from './components/Login/Login';
 import ExploreScreen from './components/MainTabs/Explore/ExploreScreen';
 import SearchScreen from './components/MainTabs/Search/SearchScreen';
@@ -8,10 +9,30 @@ import CartScreen from './components/MainTabs/Cart/CartScreen';
 import ProfileScreen from './components/MainTabs/Profile/ProfileScreen';
 
 const MainTabs = TabNavigator({
-  Explore: {screen: ExploreScreen},
-  Search: {screen: SearchScreen},
-  Cart: {screen: CartScreen},
-  Profile: {screen: ProfileScreen}
+  Explore: {
+    screen: ExploreScreen,
+    navigationOptions: {
+      tabBarIcon: <Icon name="compass" size={30} />
+    }
+  },
+  Search: {
+    screen: SearchScreen,
+    navigationOptions: {
+      tabBarIcon: <Icon name="search" size={30} />
+    }
+  },
+  Cart: {
+    screen: CartScreen,
+    navigationOptions: {
+      tabBarIcon: <Icon name="shopping-cart" size={30} />
+    }
+  },
+  Profile: {
+    screen: ProfileScreen,
+    navigationOptions: {
+      tabBarIcon: <Icon name="user" size={30} />
+    }
+  }
 });
 
 const RootNavigator = StackNavigator({

@@ -13,42 +13,40 @@ export default class Login extends React.Component {
             />
           <Text style={styles.title}> Line before the logo </Text>
         </View>
-        <View style={styles.formContainer}>
-            <View style={styles.loginContainer}>
-              <TextInput
-                placeholder="email"
-                returnKeyType="next"
-                style={styles.input}
-                onSubmitEditing={() => this.passwordInput.focus()}
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-              />
-              <TextInput
-                placeholder="password"
-                returnKeyType="next"
-                secureTextEntry
-                style={styles.input}
-                ref={(input) => this.passwordInput = input}
-                onSubmitEditing={() => this.confirmPassInput.focus()}
-              />
-              <TextInput
-                placeholder="confirm password"
-                returnKeyType="go"
-                secureTextEntry
-                style={styles.input}
-                ref={(input) => this.confirmPassInput = input}
-              />
-              <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>SIGN UP</Text>
-              </TouchableOpacity>
+        <View style={styles.loginContainer}>
+          <TextInput
+            placeholder="email"
+            returnKeyType="next"
+            style={styles.input}
+            onSubmitEditing={() => this.passwordInput.focus()}
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+          />
+          <TextInput
+            placeholder="password"
+            returnKeyType="next"
+            secureTextEntry
+            style={styles.input}
+            ref={(input) => this.passwordInput = input}
+            onSubmitEditing={() => this.confirmPassInput.focus()}
+          />
+          <TextInput
+            placeholder="confirm password"
+            returnKeyType="go"
+            secureTextEntry
+            style={styles.input}
+            ref={(input) => this.confirmPassInput = input}
+          />
+          <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>SIGN UP</Text>
+          </TouchableOpacity>
 
-              <Text style={styles.line}>------or-------</Text>
+          <Text style={styles.line}>------or-------</Text>
 
-              <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
-                <Text style={styles.buttonText}>SIGN UP W/ FACEBOOK</Text>
-              </TouchableOpacity>
-            </View>
+          <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
+            <Text style={styles.buttonText}>SIGN UP W/ FACEBOOK</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );
