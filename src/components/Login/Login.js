@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button} from 'react-native';
 
 export default class Login extends React.Component {
   render() {
@@ -9,9 +9,8 @@ export default class Login extends React.Component {
         <View style={styles.logoContainer}>
           <Image
             style={styles.logo}
-            //source={require('../../images/Serve.png')}
+            source={require('../../images/Serve.png')}
             />
-          <Text style={styles.title}> Line before the logo </Text>
         </View>
         <View style={styles.loginContainer}>
           <TextInput
@@ -38,14 +37,23 @@ export default class Login extends React.Component {
             style={styles.input}
             ref={(input) => this.confirmPassInput = input}
           />
-          <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
+          <TouchableOpacity style={styles.signUpButton}>
             <Text style={styles.buttonText}>SIGN UP</Text>
           </TouchableOpacity>
 
           <Text style={styles.line}>------or-------</Text>
 
-          <TouchableOpacity onPress={() => navigate('Main')} style={styles.buttonContainer}>
+          <TouchableOpacity onPress={() => navigate('Main')} style={styles.signUpButton}>
             <Text style={styles.buttonText}>SIGN UP W/ FACEBOOK</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.footButtonsContainer}>
+          <TouchableOpacity style={styles.footButton} onPress={() => navigate('Main')}>
+            <Text style={styles.footButtonText}>Already have an account?</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.footButton} onPress={() => navigate('Main')}>
+            <Text style={styles.footButtonText}>Forgot your passworrd?</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -61,9 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoContainer: {
-    alignItems: 'center',
-    flexGrow: 1,
-    justifyContent: 'center'
+    alignItems: 'center'
   },
   logo: {
     width: 100,
@@ -71,7 +77,6 @@ const styles = StyleSheet.create({
   },
   loginContainer: {
     padding: 20,
-    marginBottom: 250,
     justifyContent: 'center',
   },
   input: {
@@ -82,7 +87,7 @@ const styles = StyleSheet.create({
     color: '#FFF',
     paddingHorizontal: 10
   },
-  buttonContainer: {
+  signUpButton: {
     backgroundColor: '#2980b9',
     paddingVertical: 15,
   },
@@ -90,5 +95,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#FFFFFF',
     fontWeight: '700',
+  },
+  footButtonsContainer: {
+    padding: 0,
+    margin: 0
+  },
+  footButton: {
+    padding: 3,
+    margin: 0
+  },
+  footButtonText: {
+    fontSize: 13,
+    color: 'rgba(44, 62, 80,1.0)',
+    textAlign: 'center',
+    textDecorationLine: 'underline'
   }
 });
