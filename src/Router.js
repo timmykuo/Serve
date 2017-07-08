@@ -15,14 +15,13 @@ const MainTabs = TabNavigator({
 });
 
 const RootNavigator = StackNavigator({
-  Main:  {
-    screen: MainTabs,
-  },
+  Main:  {screen: MainTabs},
   Login: {
-    screen: Login,
-  },
-},{
-  initialRouteName: "Login",
+    path: './components/Login/Login',
+    screen: Login},
+},
+{ initialRouteName: "Login",
+  headerMode: 'none'
 });
 
 
