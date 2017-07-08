@@ -2,10 +2,10 @@ import React from 'react';
 import {StyleSheet, Text, View } from 'react-native';
 import {StackNavigator, TabNavigator, NavigationActions} from 'react-navigation';
 import Login from './components/Login/Login';
-import ExploreScreen from './components/MainTabs/ExploreScreen';
-import SearchScreen from './components/MainTabs/SearchScreen';
-import CartScreen from './components/MainTabs/CartScreen';
-import ProfileScreen from './components/MainTabs/ProfileScreen';
+import ExploreScreen from './components/MainTabs/Explore/ExploreScreen';
+import SearchScreen from './components/MainTabs/Search/SearchScreen';
+import CartScreen from './components/MainTabs/Cart/CartScreen';
+import ProfileScreen from './components/MainTabs/Profile/ProfileScreen';
 
 const MainTabs = TabNavigator({
   Explore: {screen: ExploreScreen},

@@ -5,8 +5,10 @@ export default class CartScreen extends React.Component {
   render() {
     return (
       <View>
-        <Text> Search screen for Serve </Text>
+        <Text> Cart screen for Serve </Text>
       </View>
     );
   }
 }
+
+//use sectionlist for cart

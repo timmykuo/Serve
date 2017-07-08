@@ -6,9 +6,6 @@ export default class LoginForm extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar
-          barStyle="light-content"
-        />
         <TextInput
           placeholder="email"
           returnKeyType="next"
@@ -50,7 +47,8 @@ export default class LoginForm extends React.Component {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
-    marginBottom: 250
+    marginBottom: 250,
+    justifyContent: 'center',
   },
   input: {
     height: 40,
@@ -62,11 +60,11 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: '#2980b9',
-    paddingVertical: 15
+    paddingVertical: 15,
   },
   buttonText: {
     textAlign: 'center',
     color: '#FFFFFF',
-    fontWeight: '700'
+    fontWeight: '700',
   }
 });
