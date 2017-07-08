@@ -1,23 +1,9 @@
 import React from 'react';
 import {StyleSheet, Text, View } from 'react-native';
-import {StackNavigator} from 'react-navigation';
-import Login from './src/components/Login/Login';
+import { Root } from './src/Router';
 
-export default class App extends React.Component {
+export default class Application extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Login />
-      </View>
-    );
+    return <Root />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'rgb(90, 200, 250)',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
