@@ -16,3 +16,4 @@ export default class CartScreen extends React.Component {
 }
 
 //use sectionlist for cart
+//use firebase to store list items

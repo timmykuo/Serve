@@ -36,6 +36,7 @@ export default class Login extends React.Component {
             secureTextEntry
             style={styles.input}
             ref={(input) => this.confirmPassInput = input}
+            onSubmitEditing={() => navigate('SetUp')}
           />
           <TouchableOpacity onPress={() => navigate('SetUp')} style={styles.signUpButton}>
             <Text style={styles.buttonText}>SIGN UP</Text>
@@ -60,6 +61,9 @@ export default class Login extends React.Component {
     );
   }
 }
+//figure out auth for login
+//facebook login info: https://firebase.google.com/docs/auth/web/facebook-login
+
 
 const styles = StyleSheet.create({
   container: {

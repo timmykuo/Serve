@@ -61,6 +61,7 @@ const SetUpNavigator = StackNavigator({
   headerMode: 'none'
 });
 
+//research if should switch from stacknavigator to stackrouter
 const RootNavigator = StackNavigator({
   Main:  {screen: MainTabs},
   Login: {screen: Login},
