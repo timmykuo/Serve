@@ -7,39 +7,65 @@ import ExploreScreen from './components/MainTabs/Explore/ExploreScreen';
 import SearchScreen from './components/MainTabs/Search/SearchScreen';
 import CartScreen from './components/MainTabs/Cart/CartScreen';
 import ProfileScreen from './components/MainTabs/Profile/ProfileScreen';
+import CuisineScreen from './components/SetUp/CuisineScreen';
+import DislikedFoodsScreen from './components/SetUp/DislikedFoodsScreen';
+import AllergiesScreen from './components/SetUp/DislikedFoodsScreen';
+import SkillScreen from './components/SetUp/SkillScreen';
+
 
 const MainTabs = TabNavigator({
   Explore: {
-    screen: ExploreScreen,
+    screen: StackNavigator({
+      Explore: {screen: ExploreScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="compass" size={30} />
+      tabBarIcon: <Icon name="compass" size={30} />,
+      title: 'Explore'
     }
   },
   Search: {
-    screen: SearchScreen,
+    screen: StackNavigator({
+      Search: {screen: SearchScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="search" size={30} />
+      tabBarIcon: <Icon name="search" size={30} />,
     }
   },
   Cart: {
-    screen: CartScreen,
+    screen: StackNavigator({
+      Cart: {screen: CartScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="shopping-cart" size={30} />
+      tabBarIcon: <Icon name="shopping-cart" size={30} />,
+      title: 'Cart'
     }
   },
   Profile: {
-    screen: ProfileScreen,
+    screen: StackNavigator({
+      Profile: {screen: ProfileScreen},
+    }),
     navigationOptions: {
-      tabBarIcon: <Icon name="user" size={30} />
+      tabBarIcon: <Icon name="user" size={30} />,
+      title: 'Profile'
     }
   }
 });
 
+const SetUpNavigator = StackNavigator({
+  Cuisine: {screen: CuisineScreen},
+  Alleriges: {screen: AllergiesScreen},
+  DislikedFoods: {screen: DislikedFoodsScreen},
+  SkillScreen: {screen: SkillScreen}
+},
+{
+  headerMode: 'none'
+});
+
+//research if should switch from stacknavigator to stackrouter
 const RootNavigator = StackNavigator({
   Main:  {screen: MainTabs},
-  Login: {
-    path: './components/Login/Login',
-    screen: Login},
+  Login: {screen: Login},
+  SetUp: {screen: SetUpNavigator},
 },
 { initialRouteName: "Login",
   headerMode: 'none'
