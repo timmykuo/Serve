@@ -7,6 +7,10 @@ import ExploreScreen from './components/MainTabs/Explore/ExploreScreen';
 import SearchScreen from './components/MainTabs/Search/SearchScreen';
 import CartScreen from './components/MainTabs/Cart/CartScreen';
 import ProfileScreen from './components/MainTabs/Profile/ProfileScreen';
+import CuisineScreen from './components/SetUp/CuisineScreen';
+import DislikedFoodsScreen from './components/SetUp/DislikedFoodsScreen';
+import AllergiesScreen from './components/SetUp/DislikedFoodsScreen';
+import SkillScreen from './components/SetUp/SkillScreen';
 
 
 const MainTabs = TabNavigator({
@@ -47,11 +51,20 @@ const MainTabs = TabNavigator({
   }
 });
 
+const SetUpNavigator = StackNavigator({
+  Cuisine: {screen: CuisineScreen},
+  Alleriges: {screen: AllergiesScreen},
+  DislikedFoods: {screen: DislikedFoodsScreen},
+  SkillScreen: {screen: SkillScreen}
+},
+{
+  headerMode: 'none'
+});
+
 const RootNavigator = StackNavigator({
   Main:  {screen: MainTabs},
-  Login: {
-    path: './components/Login/Login',
-    screen: Login},
+  Login: {screen: Login},
+  SetUp: {screen: SetUpNavigator},
 },
 { initialRouteName: "Login",
   headerMode: 'none'

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Button} from 'react-native';
+import {StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native';
 
 export default class Login extends React.Component {
   render() {
@@ -37,7 +37,7 @@ export default class Login extends React.Component {
             style={styles.input}
             ref={(input) => this.confirmPassInput = input}
           />
-          <TouchableOpacity style={styles.signUpButton}>
+          <TouchableOpacity onPress={() => navigate('SetUp')} style={styles.signUpButton}>
             <Text style={styles.buttonText}>SIGN UP</Text>
           </TouchableOpacity>
 
@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   logo: {
-    width: 100,
-    height: 100
+    width: 150,
+    height: 150
   },
   loginContainer: {
     padding: 20,
