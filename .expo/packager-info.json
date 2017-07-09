@@ -1,8 +1,8 @@
 {
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 4206,
-  "expoServerNgrokUrl": "https://jn-rv8.timmykuo.serve.exp.direct",
-  "packagerNgrokUrl": "https://packager.jn-rv8.timmykuo.serve.exp.direct",
-  "ngrokPid": 2406
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }

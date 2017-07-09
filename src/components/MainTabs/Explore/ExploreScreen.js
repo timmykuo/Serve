@@ -14,4 +14,5 @@ export default class ExploreScreen extends React.Component {
   }
 }
 
+//use ScrollView
 //refer to https://facebook.github.io/react-native/docs/network.html to see how to get content from another server to show recipes available
