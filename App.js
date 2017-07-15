@@ -15,3 +15,13 @@ export default class Application extends React.Component {
     return <Root />;
   }
 }
+
+//recipe apis:
+//https://opendata.stackexchange.com/questions/4283/open-downloadable-recipe-database
+//http://developer.pearson.com/apis/pearson-kitchen-manager/
+//https://spoonacular.com/food-api
+//free academic plan: https://developer.yummly.com/
+
+
+//downloadable databases:
+//http://www.esha.com/resources/additional-databases/
