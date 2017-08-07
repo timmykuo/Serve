@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 import {StackNavigator, TabNavigator, NavigationActions} from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Login from './components/Login/Login';
@@ -12,7 +12,6 @@ import DislikedFoodsScreen from './components/SetUp/DislikedFoodsScreen';
 import AllergiesScreen from './components/SetUp/DislikedFoodsScreen';
 import SkillScreen from './components/SetUp/SkillScreen';
 
-
 const MainTabs = TabNavigator({
   Explore: {
     screen: StackNavigator({
@@ -20,7 +19,7 @@ const MainTabs = TabNavigator({
     }),
     navigationOptions: {
       tabBarIcon: <Icon name="compass" size={30} />,
-      title: 'Explore'
+      title: 'Explore',
     }
   },
   Search: {
