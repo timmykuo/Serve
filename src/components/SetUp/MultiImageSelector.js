@@ -1,4 +1,4 @@
-import React, { Component} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { View, ListView, Text, TouchableWithoutFeedback, Image, StyleSheet } from 'react-native'
 import checkbox from './images/icon-checkbox.png'
@@ -18,7 +18,7 @@ const styleType = PropTypes.oneOfType([
 const sourceType = PropTypes.oneOfType([PropTypes.object, PropTypes.number])
 
 // A customiseable ListView that allows you to select multiple rows
-export default class MultiImageSelector extends Component {
+export default class MultiImageSelector extends React.Component {
   static propTypes = {
     items: PropTypes.arrayOf(itemType).isRequired,
     selectedItems: PropTypes.arrayOf(itemType),
@@ -136,6 +136,7 @@ export default class MultiImageSelector extends Component {
     const { mergeStyles } = this
 
     if (row.selected) {
+      //add style to make border of selected row
       checkboxSource = selectedCheckboxSource
       rowStyle = mergeStyles(styles.row, rowStyle, selectedRowStyle)
       checkboxStyle = mergeStyles(styles.checkbox, checkboxStyle, selectedCheckboxStyle)
@@ -149,6 +150,7 @@ export default class MultiImageSelector extends Component {
     return (
       <TouchableWithoutFeedback onPress={() => this.onRowPress(row)}>
         <View style={rowStyle}>
+          //add image here
           <Image style={checkboxStyle} source={checkboxSource} />
           <Text style={labelStyle}>{row.value}</Text>
         </View>
