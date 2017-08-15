@@ -11,15 +11,18 @@ import {StyleSheet, Text, View, Image } from 'react-native';
 // }
 
 export default class RecipeFrame extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View>
-        <Text> get recipe title here </Text>
+        <Text> {this.props.recipeName} </Text>
         <Image
           style={styles.recipePicture}
           source={require('../../../images/logo.png')}>
           <View style={styles.favsBackdrop}>
-            <Text style={styles.numFavs}>Get number favs </Text>
+            <Text style={styles.numFavs}> {this.props.numFavs} </Text>
           </View>
         </Image>
       </View>
@@ -30,8 +33,9 @@ export default class RecipeFrame extends React.Component {
 const styles = StyleSheet.create({
   recipePicture: {
     flex: 1,
-    height: 52,
-    width: 52
+    justifyContent: 'center',
+    alignItems: 'center'
+
   },
   favsBackdrop: {
 

@@ -1,12 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image, ListView} from 'react-native';
 import FilterButton from './FilterButton.js';
 import NavigationBar from 'react-native-navbar';
 import RecipeFrame from './RecipeFrame.js';
 
 export default class ExploreMain extends React.Component {
-  setParentState(args){
-    this.props.setParentState(args)
+  constructor(props) {
+    super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: ds.cloneWithRows(['row 1', 'row2']),
+    };
   }
 
   render() {
@@ -29,10 +33,15 @@ export default class ExploreMain extends React.Component {
              </TouchableOpacity>
           }
         />
-        <View style={styles.recipeContainer}>
-          <RecipeFrame />
-        <Text> Main explore screen page </Text>
-        </View>
+        <ListView
+          style={styles.recipeContainer}
+          dataSource={this.state.dataSource}
+          renderRow={(rowData) => <RecipeFrame
+                                    recipeName = {'put recipe name here'}
+                                    recipeImg = {'../../../images/logo.png'}
+                                    numFavs = {'number favs here'}
+                                    rowData={rowData}/>}
+          />
       </View>
     );
   }

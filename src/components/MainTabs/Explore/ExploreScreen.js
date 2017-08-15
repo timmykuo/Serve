@@ -60,6 +60,10 @@ export default class ExploreScreen extends React.Component {
     this.drawer.close();
   }
 
+  onClose() {
+    //getRecipes
+  }
+
   setStateFrag(frag) {
     this.setState(frag);
   }
@@ -90,6 +94,7 @@ export default class ExploreScreen extends React.Component {
         negotiatePan={this.state.negotiatePan}
         changeVal={this.state.changeVal}
         side={this.state.side}
+        onClose={this.onClose.bind(this)}
         >
         <ExploreMain
           drawerType={this.state.drawerType}
@@ -127,6 +132,15 @@ const drawerStyles = {
 
 const styles = StyleSheet.create({
 });
+
+// function getRecipes() {
+//   return fetch('http://api.yummly.com/v1/api/recipes?_app_id=84089c4e&_app_key=53f783309ae85e96a277cf67da0b88b8&requirePictures=true')
+//     .then(function(response) {
+//       return response.json()
+//     }).then(function(responseJson) {
+//
+//     });
+// }
 
 
 //ListView to show recipes
