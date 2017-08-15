@@ -2,8 +2,12 @@ import React from 'react';
 import {StyleSheet, Text, ScrollView, Image, TouchableOpacity, Switch, View} from 'react-native';
 
 export default class ControlPanel extends React.Component {
-  constructor(props) {
-    super(props);
+  setParentState(args){
+    this.props.setParentState(args)
+  }
+
+  constructor(props, context) {
+    super(props, context);
     this.state={
       dairyAllergy: false,
       eggAllergy: false,
@@ -15,9 +19,7 @@ export default class ControlPanel extends React.Component {
       <ScrollView>
         <Text> Filter Menu </Text>
         <TouchableOpacity
-          onPress={() => {
-            this.props.closeDrawer();
-          }}>
+          onPress={this.props.closeDrawer}>
             <Text> close drawer </Text>
         </TouchableOpacity>
         <View style={styles.options}>

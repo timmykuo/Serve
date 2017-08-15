@@ -14,7 +14,7 @@ export default class ExploreScreen extends React.Component {
       openDrawerOffset:100,
       closedDrawerOffset:0,
       panOpenMask: .1,
-      panCloseMask: .9,
+      panCloseMask: .25,
       relativeDrag: false,
       panThreshold: .25,
       tweenHandlerOn: false,
@@ -25,7 +25,7 @@ export default class ExploreScreen extends React.Component {
       acceptDoubleTap: false,
       acceptTap: false,
       acceptPan: true,
-      tapToClose: false,
+      tapToClose: true,
       negotiatePan: false,
       side: "right",
     };
@@ -66,12 +66,9 @@ export default class ExploreScreen extends React.Component {
 
 
   render() {
-    var controlPanel = <ControlPanel closeDrawer={() => {
-      this.drawer.close();
-    }} />;
     return (
       <Drawer
-        ref={c => this.drawer = c}
+        ref={(ref) => this.drawer = ref}
         type={this.state.drawerType}
         animation={this.state.animation}
         openDrawerOffset={this.state.openDrawerOffset}
@@ -80,7 +77,7 @@ export default class ExploreScreen extends React.Component {
         panCloseMask={this.state.panCloseMask}
         relativeDrag={this.state.relativeDrag}
         panThreshold={this.state.panThreshold}
-        content={controlPanel}
+        content={<ControlPanel closeDrawer={this.closeDrawer.bind(this)}/>}
         styles={drawerStyles}
         disabled={this.state.disabled}
         tweenHandler={this.tweenHandler.bind(this)}
