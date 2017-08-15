@@ -16,6 +16,7 @@ const MainTabs = TabNavigator({
   Explore: {
     screen: StackNavigator({
       Explore: {screen: ExploreScreen},
+      //onLoad() or onOpen() or componentDidMount()
     }),
     navigationOptions: {
       tabBarIcon: <Icon name="compass" size={30} />,

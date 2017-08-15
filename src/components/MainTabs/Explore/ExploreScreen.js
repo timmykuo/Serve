@@ -25,7 +25,7 @@ export default class ExploreScreen extends React.Component {
       acceptDoubleTap: false,
       acceptTap: false,
       acceptPan: true,
-      tapToClose: true,
+      tapToClose: false,
       negotiatePan: false,
       side: "right",
     };
@@ -68,7 +68,7 @@ export default class ExploreScreen extends React.Component {
   render() {
     var controlPanel = <ControlPanel closeDrawer={() => {
       this.drawer.close();
-    }} />
+    }} />;
     return (
       <Drawer
         ref={c => this.drawer = c}
@@ -123,14 +123,6 @@ export default class ExploreScreen extends React.Component {
   }
 }
 
-// function getRecipes() {
-//   return fetch('http://api.yummly.com/v1/api/recipes?_app_id=app-id&_app_key=app-key')
-//     .then(function(response) {
-//       return response.json()
-//     }).then(function(responseJson) {
-//
-//     });
-// }
 const drawerStyles = {
   drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
   main: {paddingLeft: 3},

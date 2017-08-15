@@ -1,7 +1,8 @@
 import React from 'react';
-import {StyleSheet, Text, View, TouchableOpacity, Image, PropTypes} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import FilterButton from './FilterButton.js';
 import NavigationBar from 'react-native-navbar';
+import RecipeFrame from './RecipeFrame.js';
 
 export default class ExploreMain extends React.Component {
   setParentState(args){
@@ -28,7 +29,10 @@ export default class ExploreMain extends React.Component {
              </TouchableOpacity>
           }
         />
+        <View style={styles.recipeContainer}>
+          <RecipeFrame />
         <Text> Main explore screen page </Text>
+        </View>
       </View>
     );
   }
