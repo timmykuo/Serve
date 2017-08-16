@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity, Dimensions } from 'react-native';
 
 // function getRecipes() {
 //   return fetch('http://api.yummly.com/v1/api/recipes?_app_id=84089c4e&_app_key=53f783309ae85e96a277cf67da0b88b8&requirePictures=true')
@@ -25,6 +25,7 @@ export default class RecipeFrame extends React.Component {
       <View style={styles.recipeFrame} accessible={true}>
         <Text style={styles.recipeName}> {this.props.recipeName} </Text>
         <Image
+          resizeMode='contain'
           style={styles.recipeImg}
           source={require('../../../images/logo.png')}>
           <View style={styles.favsBackdrop}>
@@ -36,21 +37,31 @@ export default class RecipeFrame extends React.Component {
   }
 }
 
+var deviceHeight = Dimensions.get('window').height;
+var deviceWidth = Dimensions.get('window').width;
+
 const styles = StyleSheet.create({
   recipeFrame: {
     flex: 1,
     justifyContent: 'center',
+    width: deviceWidth,
+    height: deviceHeight/2,
+    padding: 13,
+    paddingRight: 16,
+    paddingBottom: 7
   },
   recipeName: {
     textAlign: 'left',
     fontSize: 25,
+    paddingBottom: 6
   },
   recipeImg: {
     flex: 1,
-    height: 100,
-    width: 100,
-    alignSelf: 'stretch',
     borderWidth: 1,
+    padding: 0,
+    margin: 0,
+    width: undefined,
+    height: undefined
   },
   favsBackdrop: {
 
