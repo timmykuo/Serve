@@ -9,20 +9,89 @@ export default class ControlPanel extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state={
+      //submenus for each category
+      //&requirePictures=true (use switch)
+      //allergies
       dairyAllergy: false,
       eggAllergy: false,
+      glutenAllergy: false,
+      peanutAllergy: false,
+      seafoodAllergy: false,
+      sesameAllergy: false,
+      soyAllergy: false,
+      sulfiteAllergy: false,
+      treeNutAllergy: false,
+      wheatAllergy: false,
+      //diets
+      lactoVegDiet: false,
+      ovoVegDiet: false,
+      pescDiet: false,
+      veganDiet: false,
+      vegDiet: false,
+      //Cuisines
+      american: false,
+      italian: false,
+      asian: false,
+      mexican: false,
+      southernAndSoul: false,
+      french: false,
+      southwestern: false,
+      barbecue: false,
+      indian: false,
+      chinese: false,
+      cajunAndCreole: false,
+      english: false,
+      mediterranean: false,
+      greek: false,
+      spanish: false,
+      german: false,
+      thai: false,
+      moroccan: false,
+      irish: false,
+      japanese: false,
+      cuban: false,
+      hawaiin: false,
+      swedish: false,
+      hungarian: false,
+      portugese: false,
+      //courses
+      mainDishes: false,
+      desserts: false,
+      sideDishes: false,
+      lunchAndSnacks: false,
+      appetizers: false,
+      salads: false,
+      breads: false,
+      breakfastAndBrunch: false,
+      soups: false,
+      beverages: false,
+      condimentsAndSauces: false,
+      cocktails: false,
+      //holidays
+      christmas: false,
+      summer: false,
+      thanksgiving: false,
+      newYear: false,
+      gameDay: false,
+      halloween: false,
+      hanukkah: false,
+      fourthOfJuly: false,
     };
   }
 
   render() {
     return(
-      <ScrollView>
-        <Text> Filter Menu </Text>
+      <ScrollView contentContainerStyle={styles.filterMenu}>
         <TouchableOpacity
+          style={styles.filterButton}
           onPress={this.props.closeDrawer}>
-            <Text> close drawer </Text>
+            <Text style={styles.filterButtonText}> Filter </Text>
         </TouchableOpacity>
+        <Text style={styles.menuText}> Choose different filters below to better explore recipes you want. Filters saved in your profile settings will be automatically applied. </Text>
         <View style={styles.options}>
+          <TouchableOpacity>
+            <Text> Allergies </Text>
+          </TouchableOpacity>
           <View style={styles.allowedAllergies}>
             <Text> Dairy Allergy </Text>
             <Switch
@@ -33,21 +102,46 @@ export default class ControlPanel extends React.Component {
               onValueChange = {(value) => this.setState({eggAllergy: value})}
               value = {this.state.eggAllergy}/>
           </View>
+          <TouchableOpacity>
+            <Text> Diets </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text> Cusines </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text> Courses </Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text> Holidays </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     );
   }
 }
-//submenus for each category
-//&requirePictures=true (use switch)
-//allowedAllergies (Dairy, Egg, Gluten, Peanut, Seafood, Sesame, Soy, Sulfite, Tree Nut, Wheat)
-//allowedDiet (Lacto vegetarian, Ovo vegetarian, Pescetarian, Vegan, Vegetarian)
-//allowedCuisine (American, Italian, Asian, Mexican, Southern & Soul Food, French, Southwestern, Barbecue, Indian, Chinese, Cajun & Creole, English, Mediterranean, Greek, Spanish, German, Thai, Moroccan, Irish, Japanese, Cuban, Hawaiin, Swedish, Hungarian, Portugese)
-//allowedCourse (Main Dishes, Desserts, Side Dishes, Lunch and Snacks, Appetizers, Salads, Breads, Breakfast and Brunch, Soups, Beverages, Condiments and Sauces, Cocktails)
-//allowedHoliday (Christmas, Summer, Thanksgiving, New Year, Super Bowl / Game Day, Halloween, Hanukkah, 4th of July)
+
 const styles = StyleSheet.create({
+  filterMenu: {
+    paddingTop: 64,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  menuText: {
+
+  },
+  filterButton: {
+    flex: 1,
+    borderRadius: 1,
+    padding: 10,
+    backgroundColor: 'gray',
+  },
+  filterButtonText: {
+    textAlign: 'center'
+  },
   options: {
-    flex: 1
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   allowedAllergies: {
 
