@@ -14,3 +14,5 @@ export default class SearchScreen extends React.Component {
     );
   }
 }
+
+//main page for serve for now
