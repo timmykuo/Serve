@@ -76,7 +76,7 @@ export default class ExploreMain extends React.Component {
           data={this.state.data}
           renderItem={({item}) => (
               <RecipeFrame
-                recipeName = {('anna poopoo')}
+                recipeName = {('recipe name')}
                 numFavs = {('number of favs')}
                 />
           )}

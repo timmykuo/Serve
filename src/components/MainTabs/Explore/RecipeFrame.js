@@ -20,9 +20,13 @@ export default class RecipeFrame extends React.Component {
   // }
   //<View onAccessibilityTap={() => showRecipeDetails}>
 
+  showRecipeDetails(){
+    console.log("show recipe details");
+  };
+
   render() {
     return (
-      <View style={styles.recipeFrame} accessible={true}>
+      <View style={styles.recipeFrame} accessible={true} onAccessibilityTap={() => this.showRecipeDetails()}>
         <Text style={styles.recipeName}> {this.props.recipeName} </Text>
         <Image
           resizeMode='contain'
